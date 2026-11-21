@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link href="./src/img/favicon.png" rel=" icon" type="image/png" />
+    <title>LotusesWC - женский календарь от ArtMaryApps</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+
+<body class="body">
+    <div class="body__commonContainer">
+        <svg class="body__mainLogo">
+            <title>ArtMaryApps logo</title>
+            <image xlink:href="./src/img/logoAMapps.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
+        </svg>
+        <svg class="body__lady">
+            <title>sitting lady</title>
+            <image xlink:href="./src/img/lady.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
+        </svg>
+
+        <div class="body__containerAbout containerAbout">
+            <svg class="containerAbout__lotusesLogo">
+                <title>LotusesWC logo</title>
+                <image xlink:href="./src/img/logoLotuses.png" height="100%" width="100%" />
+            </svg>
+            <h1 class="containerAbout__header">Lotuses</h1>
+            <h3 class="containerAbout__title">women's calendar</h3>
+            <p class="containerAbout__descr">простой и удобный календарь</br>
+                для отслеживания менструального цикла</br>
+                с возможностью сохранения данных в excel</p>
+        </div>
+        <img src="src\img\Screenshot.png" alt="Phone screenshot" class="body__phone">
+
+        <div class="body__buttonsContainer buttonsContainer">
+            <button type="button" class="buttonsContainer__button button buttonsContainer__details" id="jsButtonDetails">
+                Узнайте подробности
+            </button>
+            <div class="buttonsContainer__button button">
+                <div>
+                    <a href="https://play.google.com/store/apps/details?id=com.ArtMaryApps.LotusesWC">
+                        <img src="src\img\googleplay1.png" alt="Download from Google Play" class="button__google">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="body__contact">
+            <p>Связь с разработчиком:</p>
+            <p>artmary.apps@gmail.com</p>
+        </div>
+    <div class="body__background">
+    </div>
+    <div id="jsPopupDetails" class="body__overlay overlay">
+        <div class="overlay__popup">
+            <p id="jsClose" class="overlay__close">&times;</p>
+            <div class="overlay__popupImage">
+            </div>
+        </div>
+    </div>
+    <script src="src/js/popup.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,8 @@
 :root {
     --main-color-font: #dd6292;
-    box-sizing: border-box;
+    --bg-gradient-color-1: #f1d1d2;
+    --bg-gradient-color-2: #f0f8cd;
+    --bg-main-gradient: linear-gradient(75deg, var(--bg-gradient-color-2), var(--bg-gradient-color-1)) fixed
 }
 
 html,
@@ -10,612 +12,600 @@ body {
     padding: 0;
     margin: 0;
     color: var(--main-color-font);
-}
-
-.body {
-    background: linear-gradient(75deg, #f0f8cd, #f1d1d2) fixed;
     font-family: "Montserrat Alternates", sans-serif;
 }
 
-.body__background {
+body {
+    background: var(--bg-main-gradient);
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   Common & main page styles
+   ========================================================================== */
+.backdrop {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 38vh;
+    z-index: 1;
+    display: flex;
+}
+
+.backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: url("./src/img/background.png");
     background-size: cover;
     opacity: 0.5;
-    min-height: 220px;
+    z-index: -1;
 }
-.body__buttonsContainer {
-    width: 70%;
-    top: 64vh;
-    position: relative;
-}
-.buttonsContainer {
+
+.hero {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
 }
 
-.overlay__close {
-    line-height: 0;
-    top: -20px;
+.hero__screenshot {
+    padding: 2vw 5vw;
+}
+
+.screenshot {
+    width: 18.25vw;
+    height: 39vw;
+}
+
+.page__header {
+    z-index: 20;
+    height: 8vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.page__link--home {
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    font-size: 50px;
-    color: var(--main-color-font);
-    text-decoration: none;
-    z-index: 30;
-}
-
-.overlay__close:hover {
-    color: #f26294;
-}
-
-.body__commonContainer {
-    position: relative;
-    width: 86%;
-    margin: 0 auto;
-    height: 100%;
-}
-
-.body__contact {
-    color: #4f6811;
-    position: absolute;
-    font-size: max(1.1em, min(7em, calc(100vw / 70)));
-    line-height: 0.15em;
-    font-weight: 500;
-    z-index: 5;
-    bottom: 1em;
-    
-}
-
-.body__lady {
-    position: absolute;
-    height: 45vh;
-    min-height: 150px;
-    width: 30vw;
-    min-width: 220px;
-    top: 16vh;
-    left: -2%;
-}
-
-.containerAbout__lotusesLogo {
-    top: 1em;
-    margin-bottom: 2em;
-    position: relative;
-    width: 20vh;
-    height: 9vw;
-    min-height: 100px;
-    min-width: 100px;
-}
-
-.body__mainLogo {
-    position: absolute;
-    margin-top: 1em;
-    height: 12vh;
-    min-height: 71px;
-    min-width: 100;
-}
-
-.body__phone {
-    position: absolute;
-    z-index: 15;
-    max-height: 80vh;
-    top: 10vh;
-    right: 2%;
-    min-height: 206px;
-    min-width: 100px;
-    max-width: 25vw;
-}
-.buttonsContainer__button {
-    position: inherit;
-}
-.button {
-    width: 300px;
-    height: 100px;
-    background-color: #f0d0d1;
-    border-radius: 15px;
-    box-shadow: 0 0 0.5em #444;
+    top: 1vw;
+    left: 1vw;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 0.7vw;
     overflow: hidden;
-    transition-duration: 300ms;
 }
 
-.button:hover {
-    transform: scale(1.1);
+.page__app-logo {
+    width: inherit;
+    height: inherit;
 }
 
-.button__google {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    backface-visibility: hidden;
+.page__brand {
     position: absolute;
-    margin: 0 auto;
-    background-color: #000000;
-}
-
-.body__containerAbout {
-    position: absolute;
-    left: 27%;
-}
-
-.containerAbout {
-    text-align: center;
-    min-height: 250px;
-}
-
-.containerAbout__header {
-    line-height: 0.5em;
-    font-size: max(4.5em, min(40em, 8vw));
-    font-weight: 400;
-    letter-spacing: 0.05em;
     margin: 0;
+    top: 1vw;
+    right: 1vw;
+    width: 7vw;
 }
 
-.containerAbout__title {
-    margin: 1em 0 1.5em;
-    line-height: 0.6em;
-    font-size: max(1.45em, min(10em, calc(100vw * 4 / 140)));
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about__logo {
+    width: 9vw;
+    height: 9vw;
+    border-radius: 1.2vw;
+    margin-bottom: 2vw;
+}
+
+.about__heading {
+    margin: 0 0 0.6vw;
+    font-size: 8.05vw;
+    font-weight: 500;
+    line-height: 80%;
+}
+
+.about__subheading {
+    margin: 0;
+    font-size: 2.8vw;
     font-weight: 400;
+    line-height: 80%;
     letter-spacing: 0.1em;
 }
 
-.containerAbout__descr {
-    font-size: max(0.95em, min(7em, calc(100vw / 70)));
-    margin: 1em 0 0;
+.about__description {
+    text-align: center;
+    font-size: 1.428vw;
     font-weight: 400;
-    letter-spacing: 0.05em;
 }
 
-.body__overlay {
-    position: absolute;
+.actions {
     width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero__lady {
+    margin: 0 auto;
+    display: flex;
+    padding-top: 5.2vw;
+}
+
+.lady__img {
+    width: 30vw;
+    height: 22.2vw;
+}
+
+.footer {
+    margin-top: auto;
+    margin-left: auto;
+    position: relative;
+
+}
+
+.contacts {
+    color: #1D7B1D;
+    font-size: 1.428vw;
+    font-weight: 600;
+    margin: 1vw;
+}
+
+.contacts__link {
+    color: inherit;
+    text-decoration: none;/
+}
+
+.overlay {
+    position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 0.8s ease;
+    width: 100%;
+    height: 100%;
     z-index: 20;
-    visibility: hidden;
+    background: rgba(0, 0, 0, 0.7);
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease;
 }
 
-.body__overlay.body__openPopup {
+.overlay.overlay--open {
     visibility: visible;
     opacity: 1;
 }
 
 .overlay__popup {
-    width: 80%;
-    height: 80%;
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
     z-index: 25;
     text-align: center;
-    background: linear-gradient(75deg, #f0f8cd, #f1d1d2);
+    background: var(--bg-main-gradient);
     border-radius: 15px;
     transition: opacity 0.8s ease;
-    position: relative;
 }
 
-.overlay__popup .overlay__popupImage {
-    background: url("./src/img/popup.png") no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: auto;
+.overlay__close {
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+    z-index: 30;
+    width: 2.68vw;
+    height: 2.68vw;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    font-size: 2.6vw;
+    line-height: 80%;
+    font-family: "Montserrat Alternates", sans-serif;
+    color: var(--main-color-font);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+.overlay__close:hover {
+    color: #f26294;
+    background: color-mix(in srgb, var(--main-color-font) 10%, transparent);
+
+}
+
+.overlay__image {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
+    margin: auto;
+    background: url("./src/img/popup.png") no-repeat center;
+    background-size: contain;
 }
 
-.buttonsContainer__details {
-    font-size: max(1em, min(2em, calc(100vw / 60)));
-    color: var(--main-color-font);
-    font-family: "Montserrat Alternates", sans-serif;
-    background-color: #f0d0d1;
-    border-radius: 15px;
-    border: none;
+
+/* ==========================================================================
+   Breakpoint 2 — Tablet portrait (577–1024px)
+   ========================================================================== */
+@media (orientation: portrait) and (min-width: 577px) and (max-width: 1024px) {
+    .backdrop {
+        height: 25vh;
+    }
+
+    .page__link--home {
+        top: 2vw;
+        left: 2vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 1.4vw;
+    }
+
+    .hero {
+        top: 0;
+        transform: translateY(0);
+        flex-direction: column;
+        padding-top: 7vw;
+    }
+
+    .page__brand {
+        top: 2vw;
+        right: 2vw;
+        width: 15vw;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about__logo {
+        width: 14vw;
+        height: 14vw;
+        margin-bottom: 4vw;
+    }
+
+    .about__heading {
+        margin-bottom: 2vw;
+        font-size: 20vw;
+    }
+
+    .about__subheading {
+        margin: 0;
+        font-size: 6.8vw;
+    }
+
+    .about__description {
+        font-size: 3vw;
+    }
+
+    .actions {
+        justify-content: space-around;
+    }
+
+    .lady img {
+        width: 45vw;
+        height: 33.3vw;
+    }
+
+    .hero__screenshot {
+        display: none;
+    }
+
+
+    .contacts {
+        margin: 2vw;
+        font-size: 3.5vw;
+    }
+
+    .overlay__image {
+        background-image: url("./src/img/popupVertical.png");
+    }
+}
+
+/* ==========================================================================
+   Breakpoint 3 — Landscape phone (narrow width, ≤ 768px)
+   ========================================================================== */
+@media (orientation: landscape) and (max-width: 768px) {
+    .backdrop {
+        height: 30vh;
+    }
+
+    .page__link--home {
+        top: 2vw;
+        left: 2vw;
+        width: 8vw;
+        height: 8vw;
+        border-radius: 1.2vw;
+    }
+
+    .hero {
+        top: 0;
+        transform: translateY(0);
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 2vw;
+
+    }
+
+    .page__brand {
+        width: 10vw;
+    }
+
+    .about {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .about__logo {
+        margin-bottom: 1vw;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .about__heading {
+        margin-bottom: 1vw;
+        font-size: 10vw;
+    }
+
+    .about__subheading {
+        margin: 0;
+        font-size: 3.4vw;
+    }
+
+    .about__description {
+        font-size: 2vw;
+    }
+
+    .actions {
+        justify-content: space-around;
+    }
+
+    .hero__lady {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero__screenshot {
+        display: block;
+    }
+
+    .contacts {
+        margin: 2vw;
+        font-size: 2vw;
+    }
+
+    .overlay__image {
+        background-image: url("./src/img/popupVertical.png");
+    }
+}
+
+/* ==========================================================================
+   Breakpoint 4 — Portrait phone (≤ 576px)
+   ========================================================================== */
+@media (orientation: portrait) and (max-width: 576px) {
+    .backdrop {
+        height: 25vh;
+    }
+
+    .page__link--home {
+        top: 2vw;
+        left: 2vw;
+        width: 15vw;
+        height: 15vw;
+        border-radius: 2.1vw;
+    }
+
+    .hero {
+        top: 0;
+        transform: translateY(0);
+        padding-top: 5vw;
+        flex-direction: column;
+
+    }
+
+    .page__brand {
+        width: 20vw;
+        top: 2vw;
+        right: 2vw;
+    }
+
+    .about__logo {
+        margin-bottom: 2vw;
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .about__heading {
+        font-size: 20vw;
+        margin-bottom: 2vw;
+    }
+
+    .about__subheading {
+        font-size: 7vw;
+        margin-bottom: 6vw;
+
+    }
+
+    .about__description {
+        font-size: 4vw;
+        margin-bottom: 8vw;
+
+    }
+
+    .actions {
+        justify-content: space-around;
+        margin-bottom: 6vw;
+    }
+
+    .lady img {
+        width: 80vw;
+        height: 59.2vw;
+    }
+
+    .hero__screenshot {
+        display: none;
+    }
+
+    .contacts {
+        margin: 4vw;
+        font-size: 4vw;
+    }
+
+    .overlay__image {
+        background-image: url("./src/img/popupVertical.png");
+    }
+}
+
+/* ==========================================================================
+    download page styles
+   ========================================================================== */
+.hero-download {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 2vw;
+    row-gap: 3vw;
+}
+
+.hero-download__header_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-download__heading, .hero-download__subheading {
+    text-align: center;
+    margin: 0;
+    line-height: 80%;
+}
+
+.hero-download__heading {
+    font-weight: 400;
+    font-size: 5vw;
+}
+
+.hero-download__app-name {
+    font-weight: 500;
+    display: inline-block;
+    font-size: 4vw;
+    padding-top: 2vw;
+}
+
+.hero-download__subheading {
+    font-size: 2.35vw;
+    font-weight: 400;
+}
+
+.stores {
+    max-width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 4vw;
+    column-gap: 6vw;
     align-items: center;
     justify-content: center;
 }
 
-@media (orientation: portrait) {
-    .body__commonContainer {
-        height: 30vh;
+/* ==========================================================================
+   Breakpoint 2 — Tablet portrait (577–1024px)
+   ========================================================================== */
+@media (orientation: portrait) and (min-width: 577px) and (max-width: 1024px) {
+    .hero-download {
+        padding-top: 5vw;
+        row-gap: 4vw;
     }
-    .body__buttonsContainer {
-        top: 45vh;
-    }
-    .buttonsContainer {
-        flex-direction: column;
-    }
-    .body__contact {
-        font-size: max(2em, min(5em, calc(100vw / 70)));
-    }
-    .body__lady {
-        left: -7%;
-        width: 45vw;
-    }
-    .containerAbout__lotusesLogo {
-        width: 10vh;
-        height: 10vh;
-    }
-    .body__mainLogo {
-        height: 8vh;
-    }
-    .body__phone {
-        height: 60vh;
-        max-width: 30vh;
-        right: 0;
-        top: 33vh;
-    }
-    .button {
-        width: 450px;
-        height: 150px;
-    }
-    .containerAbout {
-        min-height: 25vh;
-    }
-    .containerAbout__header {
-        padding-top: 1vh;
-        font-size: max(5vw, 8vh);
-        line-height: 0.2em;
-    }
-    .containerAbout__title {
-        font-size: max(3.5em, min(8em, calc(100vw * 4 / 140)));
-        height: 0;
-    }
-    .containerAbout__descr {
-        line-height: 1.1em;
-        font-size: max(2em, min(7em, calc(100vw / 70)));
-    }
-    .overlay__popup .overlay__popupImage {
-        background: url("./src/img/popupVertical.png") no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-    .buttonsContainer__details {
-        font-size: max(2em, min(7em, calc(100vw / 70)));
-        margin-bottom: 30px;
-    }
-}
 
-@media (max-aspect-ratio: 25/43) {
-    .body__buttonsContainer {
-        top: 30vh;
+    .stores {
+        gap: 5vw;
+        max-width: 70vw;
     }
-    .body__lady {
-        bottom: 5vh;
-        top: auto;
-    }
-    .body__phone {
-        height: 50vh;
-    }
-    .body__containerAbout {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
-    .containerAbout {
-        text-align: center;
-    }
-}
 
-@media (max-width: 1201px) {
-    .body__phone {
-        right: 0;
-    }
-    .button {
-        width: 240px;
-        height: 80px;
-    }
-    .buttonsContainer__details {
-        font-size: 1.5em;
-    }
-}
-
-@media (max-width: 1201px) and (orientation: portrait) {
-    .body__phone {
-        height: 50vh;
-        top: 40vh;
-    }
-    .button {
-        width: 450px;
-        height: 150px;
-    }
-    .buttonsContainer__details {
-        font-size: max(2em, min(7em, calc(100vw / 70)));
-    }
-}
-
-@media (max-width: 1201px) and (min-aspect-ratio: 60/29) {
-    .body__background {
-        height: 20vh;
-        min-height: auto;
-    }
-    .body__buttonsContainer {
-        top: 70vh;
-        left: 10%;
-    }
-}
-
-@media (max-width: 1025px) {
-    .body__commonContainer {
-        width: 96%;
-    }
-    .body__lady {
-        left: -10px;
-    }
-    .body__phone {
-        right: 1em;
-    }
-}
-
-@media (max-width: 1025px) and (orientation: portrait) {
-    .containerAbout__title {
-        font-size: max(2.8em, min(5.6em, calc(100vw * 4 / 140)));
-    }
-    .containerAbout__descr {
-        font-size: max(1.5em, min(4em, calc(100vw / 70)));
-    }
-    .buttonsContainer__button {
-        margin-left: 5vw;
-    }
-    .button {
-        width: 330px;
-        height: 110px;
-    }
-}
-
-@media (max-width: 1025px) and (min-aspect-ratio: 204/109) {
-    .body__background {
-        height: 20vh;
-        min-height: auto;
-    }
-    .body__lady {
-        left: auto;
-        height: 40vh;
-    }
-    .containerAbout__lotusesLogo {
-        height: 10vh;
-        min-height: auto;
-        min-width: auto;
-    }
-    .body__phone {
-        right: 0;
-        height: 90vh;
-        top: 1vh;
-        bottom: auto;
-    }
-    .containerAbout__header {
-        font-size: 10vw;
-    }
-    .containerAbout__title {
-        font-size: 3vw;
-    }
-    .containerAbout__descr {
-        margin-top: -7vh;
-    }
-    .body__buttonsContainer {
-        top: 55vh;
-    }
-    .buttonsContainer {
-        justify-content: space-evenly;
-    }
-    .button {
-        width: 30vh;
-        height: 10vh;
-        font-size: 1.5vw;
-    }
-}
-
-@media (max-width: 769px) {
-    .body__buttonsContainer {
-        margin: 0;
-        top: 55vh;
-        padding-left: 10%;
-    }
-    .body__commonContainer {
-        width: 100%;
-    }
-    .body__contact {
-        left: 2vw;
-    }
-    .body__lady {
-        left: 1%;
-    }
-    .body__mainLogo {
-        margin-left: 10px;
-        margin-top: 15px;
-    }
-    .body__phone {
-        display: none;
-    }
-    .containerAbout {
-        width: 70%;
-    }
-    .buttonsContainer__button {
-        margin-bottom: 15px;
-    }
-    .button {
-        width: 210px;
-    }
-}
-
-@media (max-width: 769px) and (orientation: portrait) {
-    .body__buttonsContainer {
-        top: 50vh;
-        padding: 0;
-    }
-    .buttonsContainer {
-        width: auto;
-        align-items: center;
-        flex-direction: row;
-    }
-    .body__contact {
-        font-size: max(2vh, 2.9vw);
-    }
-    .body__lady {
-        display: none;
-    }
-    .body__phone {
-        display: none;
-    }
-    .body__containerAbout {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
-    .containerAbout {
-        text-align: center;
-    }
-    .containerAbout__header {
-        height: auto;
-        padding: 1vh 0 0;
-        left: 0;
-        font-size: 15vw;
-        line-height: 4vw;
-    }
-    .containerAbout__title {
+    .hero-download__heading {
+        font-weight: 400;
         font-size: 5vw;
-        line-height: 1vw;
     }
-    .containerAbout__descr {
-        font-size: max(2vh, 2.9vw);
-        line-height: 1em;
+
+    .hero-download__app-name {
+        font-size: 6vw;
+        /* padding-top: 2vw; */
     }
-    .buttonsContainer__button {
-        margin-left: 0;
-        margin-bottom: 0;
+
+    .hero-download__subheading {
+        font-size: 3.7vw;
     }
-    .button {
-        width: 270px;
-        height: 90px;
+}
+
+/* ==========================================================================
+   Breakpoint 3 — Landscape phone (narrow width, ≤ 768px)
+   ========================================================================== */
+@media (orientation: landscape) and (max-width: 768px) {
+    .hero-download {
+        padding-top: 1vw;
+        row-gap: 2vw;
     }
-    .buttonsContainer__details {
+
+    .stores {
+        row-gap: 3vw;
+        max-width: 70vw;
+    }
+
+    .hero-download__heading {
+        font-weight: 400;
         font-size: 4vw;
-        margin-bottom: 0;
     }
-}
 
-@media (max-width: 769px) and (min-aspect-ratio: 769/555) {
-    .body__contact {
-        font-size: 1.8vw;
-        bottom: 1vh;
+    .hero-download__app-name {
+        font-size: 5vw;
     }
-    .body__background {
-        height: 20vh;
-        min-height: auto;
-    }
-    .body__buttonsContainer {
-        left: auto;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        top: 60vh;
-    }
-    .body__mainLogo {
-        min-height: 50px;
-        min-width: 70;
-        margin-left: 5px;
-        margin-top: 10px;
-    }
-    .body__lady {
-        height: 40vh;
-    }
-    .buttonsContainer__button {
-        margin: 0;
-    }
-    .button {
-        width: 120px;
-        height: 40px;
-        font-size: 1.5vw;
-    }
-    .containerAbout__header {
-        font-size: 9vw;
-    }
-    .containerAbout__title {
+
+    .hero-download__subheading {
         font-size: 3vw;
-        margin-top: 3vh;
-    }
-    .containerAbout__descr {
-        font-size: 2vw;
-        margin-top: -5vh;
     }
 }
 
-@media (max-width: 577px) {
-    .body__buttonsContainer {
-        margin: 0 auto;
-        padding-left: 0;
+/* ==========================================================================
+   Breakpoint 4 — Portrait phone (≤ 576px)
+   ========================================================================== */
+@media (orientation: portrait) and (max-width: 576px) {
+    .hero-download {
+        padding-top: 20vw;
+        row-gap: 6vw;
     }
-    .buttonsContainer {
-        align-items: center;
-    }
-    .body__commonContainer {
-        width: 100%;
-    }
-    .body__lady {
-        display: none;
-    }
-    .containerAbout__lotusesLogo {
-        min-width: 70px;
-        min-height: 70px;
-    }
-    .body__mainLogo {
-        min-height: 50px;
-        min-width: 70;
-        margin-left: 5px;
-        margin-top: 10px;
-    }
-    .body__phone {
-        display: none;
-    }
-    .buttonsContainer__button {
-        margin: 0 10px;
-    }
-    .button {
-        font-size: 1em;
-    }
-    .body__containerAbout {
-        left: auto;
-        padding: 2.5em 0 1em;
-    }
-    .containerAbout {
-        width: 100%;
-    }
-}
 
-@media (max-width: 577px) and (orientation: portrait) {
-    .buttonsContainer {
-        flex-direction: column;
+    .stores {
+        max-width: 80vw;
+        row-gap: 6vw;
     }
-    .button {
-        width: 210px;
-        height: 70px;
-    }
-    .button:first-child {
-        margin-bottom: 15px;
-    }
-}
 
-button img {
-    height: max(1em, min(7em, calc(100vw / 50)));
-    transition: 1s;
-    display: none;
-}
+    .hero-download__heading {
+        font-weight: 400;
+        font-size: 6vw;
+    }
 
-button:hover {
-    box-shadow: 0 0 0.5em #444;
-    cursor: pointer;
+    .hero-download__app-name {
+        font-size: 7vw;
+        /* padding-bottom: 4vw; */
+        padding-top: 4vw;
+    }
+
+    .hero-download__subheading {
+        font-size: 4.25vw;
+    }
 }

@@ -1,0 +1,97 @@
+.button {
+    width: 15.6vw;
+    height: 5.2vw;
+    background-color: #f0d0d1;
+    border-radius: 0.8vw;
+    transition-duration: 300ms;
+    box-shadow: 0 0 0.5em #444;
+    border: none;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: #1D7B1D;
+    align-items: center;
+    padding: 0 0.5vw;
+    column-gap: 0.5vw;
+    box-sizing: border-box;
+    display: inline-flex;
+}
+
+.button__img {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0.5em #444;
+    cursor: pointer;
+    background-color: #f26294;
+}
+
+.button:hover .button__img {
+    filter: saturate(150%) contrast(120%);
+}
+
+.button--apk {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Breakpoint 2 — Tablet portrait (577–1024px)
+   ========================================================================== */
+@media (orientation: portrait) and (min-width: 577px) and (max-width: 1024px) {
+    .button {
+        width: 38vw;
+        height: 12vw;
+        font-size: 3.6vw;
+        column-gap: 2vw;
+        padding: 0 2vw;
+    }
+
+    .button__img {
+        width: 4vw;
+        height: 4vw;
+    }
+}
+
+/* ==========================================================================
+   Breakpoint 3 — Landscape phone (narrow width, ≤ 768px)
+   ========================================================================== */
+@media (orientation: landscape) and (max-width: 768px) {
+
+    .button {
+        width: 21vw;
+        height: 7vw;
+        font-size: 2vw;
+        padding: 0 1vw;
+        column-gap: 1.5vw;
+    }
+
+    .button__img {
+        padding-left: 0;
+        width: 4.2vw;
+        height: 4.2vw;
+    }
+}
+
+/* ==========================================================================
+   Breakpoint 4 — Portrait phone (≤ 576px)
+   ========================================================================== */
+@media (orientation: portrait) and (max-width: 576px) {
+
+    .button {
+        width: 42vw;
+        height: 14vw;
+        font-size: 4vw;
+        padding: 0 2vw;
+        column-gap: 2vw;
+    }
+
+    .button__img {
+        width: 7vw;
+        height: 7vw;
+    }
+
+}

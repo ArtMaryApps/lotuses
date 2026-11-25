@@ -1,66 +1,101 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="ru">
 
 <head>
-    <link href="./src/img/favicon.png" rel=" icon" type="image/png" />
-    <title>LotusesWC - женский календарь от ArtMaryApps</title>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LotusesWC женский календарь от ArtMaryApps</title>
+    <link rel="icon" type="image/png" href="/src/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/img/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/button.css" />
+    <meta name="robots" content="index, follow"> 
+    <link rel="canonical" href=" https://artmaryapps.github.io/lotuses" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300;400;500&display=swap"
-        rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="Женский календарь для отслеживания менструального цикла с возможностью сохранения данных в таблицу. Работает без интернета, личные данные не передаются." />
+    <meta name="keywords"
+        content="Женский календарь, LotusesWC, календарь для отслеживания менструального цикла, календарь с заметками, заметки, календарь для месячных, Android-приложение, Android приложение, мобильное приложение" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://artmaryapps.github.io/lotuses" />
+    <meta property="og:title" content="LotusesWC — женский календарь для отслеживания менструального цикла" />
+    <meta property="og:description"
+        content="Удобный женский календарь для отслеживания менструального цикла с возможностью сохранения данных в таблицу. Без сбора данных и без интернета: данные хранятся в смартфоне, и вы можете их сохранить дополнительно по своему желанию." />
+    <meta property="og:image" content="https://artmaryapps.github.io/lotuses/src/img/og-image.png" />
+    <meta property="og:site_name" content="LotusesWC" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://artmaryapps.github.io/lotuses" />
+    <meta name="twitter:title" content="LotusesWC - женский календарь для отслеживания менструального цикла" />
+    <meta name="twitter:description"
+        content="Удобный женский календарь для отслеживания менструального цикла с возможностью сохранения данных в таблицу. Без сбора данных и без интернета: данные хранятся в смартфоне, и вы можете их сохранить дополнительно по своему желанию." />
+    <meta name="twitter:image" content="https://artmaryapps.github.io/lotuses/src/img/og-image.png" />
+
 </head>
 
-<body class="body">
-    <div class="body__commonContainer">
-        <svg class="body__mainLogo">
-            <title>ArtMaryApps logo</title>
-            <image xlink:href="./src/img/logoAMapps.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
-        </svg>
-        <svg class="body__lady">
-            <title>sitting lady</title>
-            <image xlink:href="./src/img/lady.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
-        </svg>
+<body>
+    <header class="page__header">
+        <img class="page__brand""
+            src=" /src/img/logoAMapps.png"
+            alt='Логотип: надпись "ArtMary apps", в верхнем правом углу от нее морда кота с бабочкой на носу, нарисована контуром.' />
+    </header>
+    <main class="hero">
+        <img class="hero__screenshot screenshot" src="src/img/screenshot.png"
+            alt="Изображение смартфона с открытым на нем приложением Lotuses - women`s calendar" />
+        <section class="hero__about about" aria-labelledby="about-heading">
+            <img class="about__logo" src="/src/img/logoLotuses.png" alt='логотип приложения "LotusesWC"' />
+            <h1 class="about__heading" id="about-heading">
+                Lotuses
+            </h1>
+            <h2 class="about__subheading">women's calendar</h2>
+            <p class="about__description">
+                простой и удобный календарь<br />
+                для отслеживания менструального цикла<br />
+                с возможностью сохранения данных в excel
+            </p>
 
-        <div class="body__containerAbout containerAbout">
-            <svg class="containerAbout__lotusesLogo">
-                <title>LotusesWC logo</title>
-                <image xlink:href="./src/img/logoLotuses.png" height="100%" width="100%" />
-            </svg>
-            <h1 class="containerAbout__header">Lotuses</h1>
-            <h3 class="containerAbout__title">women's calendar</h3>
-            <p class="containerAbout__descr">простой и удобный календарь</br>
-                для отслеживания менструального цикла</br>
-                с возможностью сохранения данных в excel</p>
+            <article class="actions" aria-label="Действия с приложением">
+                <button type="button" class="button button--details" id="jsButtonDetails">
+                    <img class="button__img" src="./src/img/question.png"
+                        alt="значок вопроса, нарисованный в стиле приложения Lotuses - women`s calendar" />
+                    Узнайте подробности
+                </button>
+                <button type="button" onclick="window.location.href = '/download/index.html';"
+                    class="button button--download" id="jsButtonDownload">
+                    <img class="button__img" src="./src/img/download.png"
+                        alt="значок загрузки, нарисованный в стиле приложения LotusesWC" />
+                    Загрузите приложение
+                </button>
+            </article>
+        </section>
+        <div class="hero__lady lady">
+            <img class="lady__img" src="./src/img/lady.png"
+                alt="контурный рисунок девушки, сидящей на коленях, которая держит в руках цветок лотоса" />
         </div>
-        <img src="src\img\Screenshot.png" alt="Phone screenshot" class="body__phone">
+    </main>
 
-        <div class="body__buttonsContainer buttonsContainer">
-            <button type="button" class="buttonsContainer__button button buttonsContainer__details" id="jsButtonDetails">
-                Узнайте подробности
-            </button>
-            <!-- <div class="buttonsContainer__button button">
-                <div>
-                    <a href="https://play.google.com/store/apps/details?id=com.ArtMaryApps.LotusesWC">
-                        <img src="src\img\googleplay1.png" alt="Download from Google Play" class="button__google">
-                    </a>
-                </div>
-            </div> -->
-        </div>
+    <div class="backdrop" aria-hidden="true">
+        <footer class="footer">
+            <p class="contacts">Связь с разработчиком:<br />
+                <a class="contacts__link" href="mailto: artmary.apps@gmail.com"> artmary.apps@gmail.com</a>
+            </p>
+        </footer>
     </div>
-        <div class="body__contact">
-            <p>Связь с разработчиком:</p>
-            <p>artmary.apps@gmail.com</p>
-        </div>
-    <div class="body__background">
-    </div>
-    <div id="jsPopupDetails" class="body__overlay overlay">
+
+    <div class="overlay" id="jsPopupDetails">
         <div class="overlay__popup">
-            <p id="jsClose" class="overlay__close">&times;</p>
-            <div class="overlay__popupImage">
-            </div>
+            <button type="button" class="overlay__close" id="jsClose" aria-label="Закрыть">
+                ×
+            </button>
+            <div class="overlay__image"></div>
         </div>
     </div>
     <script src="src/js/popup.js"></script>

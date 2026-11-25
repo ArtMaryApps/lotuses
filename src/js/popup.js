@@ -5,11 +5,11 @@ const popupDetails = document.querySelector("#jsPopupDetails");
 const close = document.querySelector("#jsClose");
 
 function showPopup(popup) {
-  popup.classList.add("body__openPopup");
+  popup.classList.add("overlay--open");
 }
 
 function hidePopup(popup) {
-  popup.classList.remove("body__openPopup");
+  popup.classList.remove("overlay--open");
 }
 
 buttonDetails.addEventListener("click", () => {
